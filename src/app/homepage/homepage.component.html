@@ -1,0 +1,132 @@
+<div class="home-wrapper">
+   <app-carousel id="app-carousel"></app-carousel>
+   <section id="scroll-section" class="demo">
+    <button (click)=scrolltoanimategrp()><span></span><span></span><span></span>Scroll</button>
+  </section>   
+  <div class="animate-group" id="animate-group" #animategrp>
+    <div id="scroll-loc"></div>
+    <div class="products fadeIn" id="products">
+      <div class="tile" [routerLink]="['/t-fit']">
+          <img src="/assets/t-fit-1.png" alt="">
+          <div class="inner-content">
+            <span class="vendor">T-FIT</span>
+            <span>Industry Grade Pipe Insulation</span>
+          </div>
+      </div>
+      <div class="tile" [routerLink]="['/crompton']">
+          <img src="/assets/crompton-1.png" alt="">
+          <div class="inner-content">
+            <span class="vendor">CROMPTON</span>
+            <span>Consumer & Professional Lighting</span>
+          </div>
+      </div>
+      <div class="tile">
+          <img src="/assets/lt-1.png" alt="">
+          <div class="inner-content">
+            <span class="vendor">L&T</span>
+            <span>Switch Gear</span>
+          </div>
+      </div>
+      <div class="tile">
+          <img class="t-fit" src="/assets/ri-1.png" alt="">
+          <div class="inner-content">
+            <span class="vendor">RISHAB INSTRUMENTS</span>
+            <span>Electronic Instruments</span>
+          </div>
+      </div>
+    </div>
+    <div class="vendors fadeIn">
+      <div class="t-col-left">
+        <div class="t-fit-tile">
+          <img src="/assets/crompton-2-long.png" alt="">
+          <div class="inner-content">
+            <span>CROMPTON</span>
+            <!-- <span class="description">The complete industrial insulation solution</span> -->
+          </div>
+        </div>
+        <div class="sm-row">
+          <div class="sm-col">
+            <img src="/assets/t-fit-2.png" alt="">
+            <div class="inner-content">
+              <span>T-FIT</span>
+            </div>
+          </div>
+          <div class="sm-col">
+            <img src="/assets/lt-2.png" alt="">
+            <div class="inner-content">
+              <span>L&T SWITCH GEAR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="t-col-right">
+        <img src="/assets/ri-2.png" alt="">
+        <span class="inner-content">RISHAB INSTRUMENTS</span>
+      </div>
+    </div>
+   </div>
+   
+  
+    <div  class="project-carousel">
+      <div class="sliders">
+        <ng-container *ngFor="let img of prjCarouselImages; let i = index">
+            <div class="slider" *ngIf="currentPrj == i">
+                <img class="img" [src]="img.path">
+            </div>
+        </ng-container>
+      </div>
+      <div *ngIf="!isSmallScreen" class="carousel-content" id="projectCarousel">
+        <h1 class="content">Featured Project</h1>
+        <h2 class="content">T-Fit Clean </h2>
+        <p class="content">Modular cleanroom insulation for pharmaceutical, biotechnology and semiconductor manufacturing</p>
+        
+      </div>
+      <div *ngIf="isSmallScreen" class="mobile-carousel-content">
+        <h1>T-Fit Clean</h1>
+        <div class="d-row">
+          <h2>Modular cleanroom insulation for pharmaceutical,</h2>
+          <p> biotechnology and semiconductor manufacturing </p>
+        </div>
+      </div>
+      <!-- <div class="right-nav" (click)="onNextProjectClick()">
+        <img src="/assets/right-filled.svg" alt="">
+      </div> -->
+    </div>
+  
+    <div class="about">
+      <div class="left-about">
+        <img src="/assets/about.jpg" alt="">
+      </div>
+      <div class="right-about">
+        <h1>About Us</h1>
+        <h2>Over 60 Years Of Safety</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum 
+          lorem nec iaculis interdum. Praesent finibus sollicitudin facilisis. 
+          Pellentesque finibus lorem tortor. Proin gravida orci orci, vitae maximus 
+          orci tempor in. Nunc tempor, lectus at efficitur dictum, nunc nibh sodales
+        </p>
+        <button>KNOW MORE</button>
+      </div>
+    </div>
+    <div class="contact">
+      <h1>CONTACT US</h1>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <input  type="text" formControlName="name" placeholder="Full Name">
+            <input  type="text" formControlName="email" placeholder="Email">
+            <input type="email" formControlName="company" placeholder="Company">
+        </div>
+        <div class="form-row">
+            <textarea name="message" id="message"  style="width: 100%;" rows="5"placeholder="Message"></textarea>
+        </div>
+        <p>By submitting this form I acknowledge I am providing consent to the processing of my 
+          personal data by Suridata.ai  in accordance with the Privacy Notice and understand 
+          that I can withdraw my consent at any time.</p>
+        <div class="btn-submit">
+            <button type="submit" >SUBMIT</button>
+        </div>  
+    </form>
+    </div>
+    <gvk-footer></gvk-footer>
+  </div>

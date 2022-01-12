@@ -1,0 +1,45 @@
+<div class="carousel">
+    <div class="sliders">
+        <ng-container *ngFor="let img of carouselImages; let i = index">
+            <div class="slider" *ngIf="current == i" >
+                <img class="img" [src]="img.path" @fade>
+                <div class="overlay">
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="overlay">
+      <div class="nav">
+        <div class="left-nav" (click)="onPreviousClick()">
+          <img src="/assets/right-filled.svg" alt="">
+        </div>
+        <div class="right-nav" (click)="onNextClick()">
+          <img src="/assets/right-filled.svg" alt="">
+        </div>
+      </div>
+      <div class="carousel-content">
+        <ng-container *ngFor="let content of carouselContents; let i = index">
+          <div class="header">
+            <img *ngIf="current == i" src="{{content.img}}" alt="">
+            <h1 *ngIf="current == i">{{content.header}}</h1>
+          </div>
+          <h2 *ngIf="current == i">{{content.text}}</h2>
+          <div *ngIf="current == i" class="more">
+            <img src="/assets/plus-icon.svg" alt="">
+            <p>FIND OUT MORE</p>
+          </div>
+        </ng-container>
+      </div>
+      <div class="carousel-pagination">
+        <ul class="image-block">
+          <ng-container *ngFor="let content of carouselContents; let i = index">
+            <li class="circle" *ngIf="current == i">
+              <span class="dot"></span>
+            </li>
+            <li class="dot-gray" *ngIf="current!=i" (click)="onDirectClick(i)">
+            </li>
+          </ng-container>
+        </ul>  
+      </div>
+    </div>
+  </div>

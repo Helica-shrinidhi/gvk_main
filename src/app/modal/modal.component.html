@@ -1,0 +1,28 @@
+<div #myModal class="container">
+    <div class="content">
+      <img class="close" src="/assets/close.png" alt="" (click)="close()">
+      <h2>Contact Us<span>.</span></h2>
+      <p>Are you interested in learning more about Copper? 
+        Enter your information in the form and a representative 
+        will contact you shortly.</p>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <input  type="text" formControlName="firstname" placeholder="First Name">
+          <input  type="text" formControlName="lastname" placeholder="Last Name">
+        </div>
+        <div class="form-row">
+          <input  type="text" formControlName="email" placeholder="Email Address">
+          <input  type="text" formControlName="company" placeholder="Company Name">
+        </div>
+        <div class="form-row">
+          <input  type="text" formControlName="phone" placeholder="Phone Number">
+          <input  type="text" formControlName="companysize" placeholder="Company Size">
+        </div>
+        <div class="form-row">
+          <textarea name="message" id="message"  style="width: 100%;" rows="5"placeholder="Requirement"></textarea>
+        </div>
+        <button>Submit</button>
+      </form>
+      
+    </div>
+</div>

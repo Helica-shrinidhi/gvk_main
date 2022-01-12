@@ -1,0 +1,54 @@
+<div class="header-wrapper">
+    <div class="header-left">
+        <img class="logo" src="/assets/gvk-logo-option-2.png" [routerLink]='[""]' (click)="closeNavLogo()">
+    </div>
+    <div class="header-right"> 
+        <svg class="menu" id="menu" (click)="menuClickHandler()"
+    width="50"
+    height="50"
+    viewBox="0 0 32 42"
+    xmlns="http://www.w3.org/2000/svg"
+    onclick="this.classList.toggle('active')">
+    <g transform="matrix(1,0,0,1,-438.286,-264.004)">
+      <g id="arrow_left1">
+        <g
+          transform="matrix(-1,-1.22465e-16,1.22465e-16,-1,858.787,564.935)">
+          <path
+            id="top"
+            d="M390,270L420,270L420,270C420,270 420.195,250.19 405,265C389.805,279.81 390,279.967 390,279.967"/>
+        </g>
+        <g transform="matrix(-1,-2.44929e-16,-2.44929e-16,1,858.786,5)">
+          <path
+            id="bottom"
+            d="M390,270L420,270L420,270C420,270 420.195,250.19 405,265C389.805,279.81 390,279.967 390,279.967"/>
+        </g>
+        <g
+          transform="matrix(-1,-1.22465e-16,1.22465e-16,-1,858.787,569.935)">
+          <path id="middle" d="M390,284.967L420,284.967" />
+        </g>
+      </g>
+    </g>
+  </svg>
+    </div> 
+</div>
+<div id="mySidenav" class="sidenav">
+    <a class="closebtn" (click)="closeNav()"><span>&times;</span></a>
+    <a class="links" routerLink="/products" (click)="closeNav()">Products</a>
+    <a class="links" routerLink="/">Projects</a>
+    <a class="links" routerLink="/">Technology</a>
+    <a class="links" routerLink="/about" (click)="closeNav()">About</a>
+    <a class="links"routerLink="/contact" (click)="closeNav()">Contact</a>
+    <div class="contacts">
+      <div class="phone">
+        
+          ph:+910000000000
+        
+        </div>
+      <div class="mail" >
+        <a href="mailto:{{email}}" style="font-size:20px">mail: info@gvkengg.com</a>
+         
+      </div>
+      
+    </div>
+  </div>
+  

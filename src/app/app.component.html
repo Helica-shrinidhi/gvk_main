@@ -1,0 +1,13 @@
+<!-- <div>
+  *ngIf="mainContentEnter" [@myInsertRemoveTrigger]="mainContentEnter ? true: false"
+</div> -->
+<div class="main-container">
+  <gvk-header class="header" id="header"></gvk-header>
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
+</div>
+
+
+<!-- <div class="body" *ngIf="loading" [@myInsertRemoveTrigger]="loading ? true: false">
+  <div class="loader">LOADING...</div>
+</div> -->
+

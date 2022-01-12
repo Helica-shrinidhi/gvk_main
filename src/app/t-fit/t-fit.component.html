@@ -1,0 +1,118 @@
+<div class="t-fit-wrapper">
+    <div class="t-fit" id="first" *ngIf="!isProjectDetailsInView">
+        <div class="left">
+          <h2>Introducing T-FIT® Unique Insulation Technology a range
+               of unique, technical insulation products</h2>
+          <p>
+            Each product in the T-FIT® range targets the 
+            specific challenges of one particular production area.
+            The whole range offers substantial cost of ownership reductions, 
+            delivered by exceptional speed of installation and in use performance.
+          </p>
+        </div>
+        <div class="right">
+            <img class="man-with-hat" src="/assets/t-fit-4.png" alt="">
+        </div>
+    </div>
+    <div class="product-range" *ngIf="!isProjectDetailsInView">
+        <div class="product-selector">
+            <span class="header">PRODUCT RANGE</span>
+            <span (click)="setCurrentProduct(0)">T-FIT CLEAN</span>
+            <span (click)="setCurrentProduct(1)">T-FIT PROCESS</span>
+            <span (click)="setCurrentProduct(2)">T-FIT HYGIENE</span>
+        </div>
+        <div class="product-type">
+            <ng-container *ngFor="let product of products; let i = index">
+                <div class="product-detail" *ngIf="current == i">
+                   <div class="product-header">
+                       <div class="header-left">
+                            <h1>{{product.productName}}</h1>
+                            <h2 style="font-weight: 300;">Unique Insulation Technology</h2>
+                       </div>
+                       <div class="header-right">
+                            <h1>T-FIT®</h1>
+                       </div>
+                   </div>
+                   <div class="scroll-container">
+                    <div class="product-description">
+                        <div class="left">
+                            <h3>Product information</h3>
+                            <h3 style="font-weight: 300;">Typical Values</h3>
+                            <p>{{product.productInfo}}</p>
+                        </div>
+                        <div class="right">
+                            <img src="{{product.productImage}}" alt="">
+                        </div>
+                   </div>
+                   <div class="product-info">
+                        <table>
+                            <tr>
+                                <th>Property</th>
+                                <th>Test Standard</th>
+                                <th>Typical Value</th>
+                            </tr>
+                            <ng-container *ngFor="let row of product.productSpec.property; let j = index">
+                                <tr>
+                                    <td>
+                                        <ng-container *ngFor="let item of product.productSpec.property[j]; let k = index">
+                                            <p>{{item}}</p>
+                                        </ng-container>
+                                    </td>
+                                    <td>
+                                        <ng-container *ngFor="let item of product.productSpec.testStandard[j]; let k = index">
+                                            <p>{{item}}</p>
+                                        </ng-container>
+                                    </td>
+                                    <td>
+                                        <ng-container *ngFor="let item of product.productSpec.typicalValue[j]; let k = index">
+                                            <p>{{item}}</p>
+                                        </ng-container>
+                                    </td>
+                                   
+                                </tr>
+                            </ng-container>
+                        </table>
+                   </div>
+                   <div class="product-details">
+                    <table>
+                        <tr>
+                            <th rowspan="2">Product Code</th>
+                            <th rowspan="2">Description: T-FIT Clean – ASME BPE</th>
+                            <th colspan="2">Insulation Sizing ID</th>
+                            <th rowspan="2">Product Type</th>
+                        </tr>
+                        <tr>
+                            <th>in</th>
+                            <th>mm</th>
+                        </tr>
+                        <ng-container *ngFor="let row of product.productDetail.productCode; let j = index">
+                            <tr>
+                                <td>
+                                    {{product.productDetail.productCode[j]}}
+                                </td>
+                                <td>
+                                    {{product.productDetail.description[j]}}
+                                </td>
+                                <td>
+                                    {{product.productDetail.InsulationID.in[j]}}
+                                </td>
+                                <td>
+                                    {{product.productDetail.InsulationID.mm[j]}}
+                                </td>
+                                <td>
+                                    {{product.productDetail.productType[j]}}
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </table>
+                   
+                
+                   </div>
+                   </div>
+                   
+                </div>
+
+            </ng-container>
+        </div>
+    </div>
+</div>
