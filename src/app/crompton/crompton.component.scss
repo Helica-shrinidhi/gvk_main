@@ -77,7 +77,6 @@
         margin-left: 10px;
         animation: 2s ease-out 0s 1 slideInFromleft;
         z-index: 1;
-
     }
     
     mdb-card:hover{
@@ -90,7 +89,9 @@
         transform: scale(1.1);
         cursor: pointer;
     }
-    
+    .card-title{
+        letter-spacing: -1px;
+    }
 }
 @media screen and (min-width:360px) and (max-width:415px) {
     .crompton-wrapper{

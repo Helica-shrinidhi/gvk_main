@@ -8,7 +8,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class ModalComponent implements OnInit {
   @ViewChild('myModal') modal: ElementRef;
-
+  Selectcompany: any = ['T-fit', 'Crompton', 'Rishab Instruments','L&T Technologies']
   public form: FormGroup;
   firstname = new FormControl("", Validators.required);
   email = new FormControl("", Validators.required);
@@ -17,6 +17,7 @@ export class ModalComponent implements OnInit {
   message = new FormControl("", Validators.required);
   companysize = new FormControl("", Validators.required);
   phone = new FormControl("", Validators.required);
+  Selectedcompany = new FormControl("", Validators.required);
   constructor(fb: FormBuilder) {
     this.form = fb.group({
       "firstname": this.firstname,
@@ -25,13 +26,19 @@ export class ModalComponent implements OnInit {
       "message": this.message ,
       "email": this.email,
       "companysize": this.companysize,
-      "phone" : this.phone
+      "phone" : this.phone,
+      "Selectedcompany": this.Selectedcompany
     });
   }
 
   ngOnInit() {
   }
-
+  changecompany(e) {
+    console.log(e.value)
+    this.Selectcompany.setValue(e.target.value, {
+      onlySelf: true
+    })
+  }
   open() {
     this.modal.nativeElement.style.display = 'block';
   }

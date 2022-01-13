@@ -57,5 +57,7 @@ appliances(){
 pumps(){
   window.open('http://www.mittalmachinery.in/downloads/products/Crompton-Resi-Pumps.pdf','_blank');
 }
-
+prolights(){
+  window.open('https://drive.google.com/file/d/14noSrmZMSuJEG8EP-IO-ayKSY-WqMifS/view?usp=sharing','_blank');
+}
 }

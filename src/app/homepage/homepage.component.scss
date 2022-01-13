@@ -793,7 +793,7 @@
           border:none;
           background-color: #000;
           color: white;
-          font-size: 18px;
+          font-size: 13px;
           font-weight: 300;
           padding: 4%;
           letter-spacing: 1px;
@@ -1076,6 +1076,14 @@
     100% {
      opacity: 1;
     }
+  }
+  @media screen and (min-width :1921px) {
+   
+.home-wrapper #scroll-loc {
+    position: absolute;
+    top: 850px;
+}
+    
   }
  
  

@@ -7,7 +7,7 @@ import { ApplicationStateService } from '../application-state.service';
   styleUrls: ['./gvk-footer.component.scss']
 })
 export class GvkFooterComponent implements OnInit {
-
+  email='info@gvkengg.com';
   constructor() { }
   
   ngOnInit() { }
