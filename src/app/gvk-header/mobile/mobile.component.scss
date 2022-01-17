@@ -44,7 +44,7 @@
     font-size: 25px;
     color: #818181;
     display: block;
-    text-align: right;
+    text-align: center;
     transition: 0.3s;
     padding-right: 30px;
   }
@@ -106,7 +106,7 @@
     }
     .sidenav {
       padding-top: 100px;
-      
+      text-align: center;
     }
     .sidenav a{
       text-align: center;
@@ -175,7 +175,7 @@
       flex-direction: column;
       margin-left: auto;
       margin-right: auto;
-      top: 160px;
+      top: 150px;
       color: #636363;
       
       text-orientation: mixed;
@@ -193,9 +193,9 @@
       flex-direction: column;
       margin-left: auto;
       margin-right: auto;
-      top: 180px;
+      top: 100px;
       color: #636363;
-      
+      bottom: 0;
       text-orientation: mixed;
       font-size: 20px;
       .phone{
